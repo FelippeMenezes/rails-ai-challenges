@@ -2,4 +2,4 @@
 
 <%= raw(render_markdown(@challenge.content)) %>
 
-<%= link_to "Ask for help", new_challenge_message_path(@challenge), class: "btn btn-primary" %>
+<%= link_to "Go to chats", challenge_chats_path(@challenge), class: "btn btn-primary" %>

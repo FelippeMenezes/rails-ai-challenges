@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   resources :challenges, only: [:index, :show] do
-    resources :messages, only: [:new, :create, :index]
+    resources :chats, only: [:index, :create]
+  end
+
+  resources :chats, only: :show do
+    resources :messages, only: [:create]
   end
 end
