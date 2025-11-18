@@ -2,7 +2,7 @@
 <%= link_to @chat.challenge.name, challenge_path(@chat.challenge) %>
 
 <% if Rails.env.development? %>
-    <span class="float-end">
+    <span id="token-counter" class="float-end">
         Input tokens: <%= @input_tokens %> / Output tokens: <%= @output_tokens %> / Context window: <%= @context_window %>
     </span>
 <% end %>

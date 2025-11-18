@@ -2,6 +2,14 @@
     <%= turbo_stream.update "chat_title", @chat.title %>
 <% end %>
 
+<%= turbo_stream.update "token-counter" do %>
+    <% if Rails.env.development? %>
+        <span class="float-end">
+            Input tokens: <%= @chat.messages.pluck(:input_tokens).compact.sum %> / Output tokens: <%= @chat.messages.pluck(:output_tokens).compact.sum %> / Context window: <%= RubyLLM.models.find(@chat.model_id).context_window %>
+        </span>
+    <% end %>
+<% end %>
+
 <%= turbo_stream.append "messages" do %>
     <%= render "messages/messages", messages: @chat.messages.last(2) %>
 <% end %>
