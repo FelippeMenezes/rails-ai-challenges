@@ -1,0 +1,15 @@
+.neumorphic-button {
+  border-radius: 50px;
+  background: #e0e0e0;
+  border: none;
+  box-shadow: inset 5px 5px 10px #bebebe, 
+              inset -5px -5px 10px #ffffff;
+  transition: box-shadow 0.2s;
+  color: black;
+}
+
+.neumorphic-button:focus {
+  box-shadow: inset 2px 2px 5px #bebebe, 
+              inset -2px -2px 5px #ffffff;
+  outline: none;
+} 
